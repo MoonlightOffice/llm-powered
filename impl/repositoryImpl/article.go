@@ -31,8 +31,8 @@ func (ar *articleRepository) FindById(id string) (*article.Article, error) {
 	return &a, nil
 }
 
-func (ar *articleRepository) Save(article article.Article) error {
-	result := ar.db.Save(&article)
+func (ar *articleRepository) Save(a article.Article) error {
+	result := ar.db.Save(&a)
 	if result.Error != nil {
 		return result.Error
 	}
